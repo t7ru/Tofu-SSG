@@ -1,0 +1,37 @@
+{
+  "name": "tofu-ssg",
+  "version": "0.1.0",
+  "description": "A static site generator from markdown files to create a blog.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build:site": "tsx src/index.ts",
+    "build:assets": "vite build",
+    "generate": "npm run build:site && npm run build:assets",
+    "serve": "npm run generate && serve dist -p 1337",
+    "preview": "serve dist -p 1337",
+    "dev:site": "tsx watch src/index.ts",
+    "dev:assets": "vite build --watch",
+    "dev": "npm run build:site && vite build --watch",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/marked": "^5.0.1",
+    "@types/node": "^20.4.2",
+    "prettier": "^3.6.2",
+    "serve": "^14.2.5",
+    "tsx": "^4.20.5",
+    "typescript": "^5.1.6",
+    "vite": "^7.1.5",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.3",
+    "marked": "^5.1.1"
+  }
+}

@@ -1,0 +1,38 @@
+{{ > hero }}
+
+<div class="container">
+  {{ #if hasGames }}
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    {{ #each games }}
+    <div class="game-card">
+      <div class="game-image-container">
+        <img src="{{ item.image }}" alt="{{ item.title }}" class="game-image">
+      </div>
+      <div class="game-info">
+        <h3 class="game-title">{{ item.title }}</h3>
+        <div class="game-meta">
+          <div class="meta-item">
+            <i class="bi bi-calendar3 me-1"></i>
+            <span>{{ item.release }}</span>
+          </div>
+        </div>
+        <div class="game-actions">
+          <a href="/categories/{{ item.slug }}" class="btn btn-danger">
+            <i class="bi bi-newspaper me-1"></i>
+            View Articles
+          </a>
+        </div>
+      </div>
+    </div>
+    {{ /each }}
+  </div>
+  {{ /if }}
+
+  {{ #if noGames }}
+  <div class="text-center py-5">
+    <i class="bi bi-controller display-1 text-muted mb-3"></i>
+    <h3 class="text-muted">No Games Available</h3>
+    <p class="text-muted">Check back later for game updates!</p>
+  </div>
+  {{ /if }}
+</div>

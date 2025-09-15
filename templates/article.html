@@ -1,0 +1,58 @@
+<div class="container">
+  <article class="blog-post">
+    <h1 class="blog-post-title">{{ article.title }}</h1>
+    <div class="blog-post-meta mb-4">
+      <span class="text-muted">{{ article.date }}</span>
+      | <a href="/authors/{{ article.author }}">{{ author.name }}</a> {{ #if
+      article.tag }} |
+      <a href="{{ article.tagLink }}" class="text-decoration-none"
+        >{{ article.tag }}</a
+      >
+      {{ /if }}
+    </div>
+
+    <div class="blog-post-content">{{ content }}</div>
+
+    <div class="blog-post-tags mt-4">
+      {{ #each article.categoriesData }}
+      <a
+        href="/categories/{{ item.slug }}"
+        class="badge category-badge me-1"
+        data-category="{{ item.name }}"
+        >{{ item.name }}</a
+      >
+      {{ /each }}
+    </div>
+
+    <div class="blog-post-author mt-5 p-4 rounded">
+      <div class="row">
+        {{ #if author.profilePicture }}
+        <div class="col-md-2">
+          <img
+            src="{{ author.profilePicture }}"
+            alt="{{ author.name }}"
+            class="img-fluid rounded-circle"
+          />
+        </div>
+        {{ /if }}
+        <div class="col">
+          <h5>{{ author.name }}</h5>
+          <p>{{ author.bio }}</p>
+          <div class="author-links">
+            {{ #if author.links.x }}
+            <a href="{{ author.links.x }}" class="me-2"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            {{ /if }} {{ #if author.links.github }}
+            <a href="{{ author.links.github }}" class="me-2"
+              ><i class="bi bi-github"></i
+            ></a>
+            {{ /if }} {{ #if author.links.website }}
+            <a href="{{ author.links.website }}"><i class="bi bi-globe"></i></a>
+            {{ /if }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>

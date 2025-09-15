@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {{ site.title }}{{ #if article }} - {{ article.title }}{{ /if }}
+    </title>
+    <meta
+      name="description"
+      content="{{ article.description || site.description }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://tds-editor.com/htmlassets/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <h3 class="loading-text">Loading...</h3>
+      </div>
+    </div>
+
+    {{ > header }}
+
+    <main class="py-4 flex-grow-1">
+      {{ content }}
+    </main>
+
+    {{ > footer }}
+
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>

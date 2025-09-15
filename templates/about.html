@@ -1,0 +1,115 @@
+{{ > hero }}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="section-header mb-4">About Us</h1>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3>What We Do</h3>
+          <p class="lead">
+            The Tofu's Static Site Generator is a tool to generate static sites from markdown files.
+          </p>
+
+          <p>
+            Donec pretium ultrices nulla, sit amet ultrices ante consequat a. Maecenas hendrerit massa eget vehicula porta. Aliquam turpis dui, porttitor quis eleifend sed, venenatis interdum mauris.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3>What We Cover</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-newspaper text-primary"></i> Latest game
+                  announcements
+                </li>
+                <li>
+                  <i class="bi bi-controller text-primary"></i> Gameplay guides
+                  and tips
+                </li>
+                <li>
+                  <i class="bi bi-people text-primary"></i> Community events
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-patch-check text-primary"></i> Game updates
+                  and patches
+                </li>
+                <li>
+                  <i class="bi bi-chat-quote text-primary"></i> Developer
+                  interviews
+                </li>
+                <li>
+                  <i class="bi bi-star text-primary"></i> Reviews and analysis
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3>Our Team</h3>
+          <p>
+            Lorem ipsum is a team of dedicated writers and editors who are something.
+          </p>
+
+          <div class="row">
+            {{ #each authors }}
+            <div class="col-md-6 mb-3">
+              <div class="d-flex align-items-center">
+                {{ #if item.profilePicture }}
+                <img
+                  src="{{ item.profilePicture }}"
+                  alt="{{ item.name }}"
+                  class="rounded-circle me-3"
+                  style="width: 50px; height: 50px"
+                />
+                {{ /if }}
+                <div>
+                  <h6 class="mb-0">{{ item.name }}</h6>
+                  <small class="text-muted">{{ item.bio }}</small>
+                </div>
+              </div>
+            </div>
+            {{ /each }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h3>Contact Us</h3>
+          <p>
+            Have a tip, suggestion, or want to contribute? We'd love to hear
+            from you!
+          </p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <i class="bi bi-envelope text-primary"></i> Email:
+                <a href="mailto:hi@t7ru.link">hi@t7ru.link</a>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                <i class="bi bi-twitter-x text-primary"></i> X:
+                <a href="https://x.com/taotoru" target="_blank">@taotoru</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

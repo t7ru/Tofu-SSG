@@ -1,0 +1,77 @@
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg modern-navbar">
+    <div class="container">
+      <a class="navbar-brand me-4" href="/">
+        <img
+          src="/assets/images/logo.png"
+          alt="{{ site.title }}"
+          class="navbar-logo"
+        />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#main-nav"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="main-nav">
+        {{ > navigation }}
+        <div class="ms-auto d-flex gap-2 justify-content-end">
+            <div class="theme-toggle-wrapper me-2">
+              <input
+                type="radio"
+                class="btn-check"
+                name="theme-options"
+                id="theme-light"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-light theme-toggle"
+                for="theme-light"
+                onclick="setTheme('light')"
+                aria-label="Light theme"
+              >
+                <i class="bi bi-sun"></i>
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="theme-options"
+                id="theme-dark"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-light theme-toggle"
+                for="theme-dark"
+                onclick="setTheme('dark')"
+                aria-label="Dark theme"
+              >
+                <i class="bi bi-moon-stars"></i>
+              </label>
+            </div>
+
+            <a href="https://x.com/taotoru" target="_blank" class="social-icon" aria-label="x">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Patreon">
+              <i class="bi bi-heart-fill"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Discord">
+              <i class="bi bi-discord"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
