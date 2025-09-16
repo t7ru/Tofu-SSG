@@ -12,7 +12,7 @@ export default defineConfig({
     emptyOutDir: false,
     cssCodeSplit: false,
     rollupOptions: {
-      input: path.resolve(__dirname, "frontend/main.ts"),
+      input: path.resolve(__dirname, "src/main.ts"),
       output: {
         entryFileNames: "js/[name].js",
         assetFileNames: (assetInfo) => {
